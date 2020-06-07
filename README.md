@@ -1,6 +1,6 @@
 <h1>
   Conway's Game of Life in HTML5 <br><br>
-  <img src=".github/capture.gif" alt="Screenshot">
+  <img src=".github/screen.gif" alt="Screenshot">
 </h1>
 
 ## Live Demo
