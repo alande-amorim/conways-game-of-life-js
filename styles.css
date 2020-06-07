@@ -4,10 +4,10 @@
 }
 
 body {
-  min-width: 100vw;
+  max-width: 100vw;
   min-height: 100vh;
   margin: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .container {
@@ -43,20 +43,12 @@ footer {
 
 #game-board {
   background-color: #999999;
-  width: 80vmin;
+  width: 100%;
+  max-width: 100vmin;
   height: 80vmin;
   display: grid;
   grid-gap: 1px;
   padding: 10px;
-}
-
-#controls { 
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  width: 100%;
-  display: flex;
-  background: #999999;
 }
 
 #game-board div {
@@ -69,4 +61,41 @@ footer {
 
 #game-board div.pulse {
   background-color: #34ff1e;
+}
+
+#controls { 
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+  max-width: 100vmin;
+  display: flex;
+  background: #999999;
+}
+
+#controls input { width: 80px; }
+#controls input, #controls button, #controls select {
+  padding: 10px 20px;
+}
+
+
+@media(max-width: 1200px) {
+  .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  main {
+    float: initial;
+    width: 100%;
+  }
+
+  aside {
+    float: initial;
+    width: 100%;
+  }
+
+  footer {
+    clear: initial;
+  }
 }
