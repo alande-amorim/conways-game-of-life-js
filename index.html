@@ -4,63 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conway's Game of Life</title>
-  <style>
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      min-width: 100vw;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-    }
-
-    #game-board {
-      background-color: #999999;
-      width: 80vmin;
-      height: 80vmin;
-      display: grid;
-      grid-template-rows: repeat(50, 1fr);
-      grid-template-columns: repeat(50, 1fr);
-      grid-gap: 1px;
-      padding: 10px;
-    }
-
-    #controls { 
-      padding: 10px;
-      width: 80vmin;
-      display: flex;
-      background: #999999;
-    }
-
-    #game-board div {
-      background-color: #777;
-    }
-
-    #game-board div.live {
-      background-color: black;
-    }
-
-    #game-board div.pulse {
-      background-color: #34ff1e;
-    }
-
-  </style>
-  <script src="game.js" defer type="module"></script>
+  <link href="./styles.css" rel="stylesheet" />
+  <script src="./scripts/game.js" defer type="module"></script>
 </head>
 <body>
 
-  <div id="game-board"></div>
-  <div id="controls">
-    <button id="startBtn">Start</button>
-    <button id="resetBtn">Reset</button>
-    <input type="text" id="generationInput" readonly value="0" disabled>
-    <button id="advanceBtn">></button>
+  <div class="container">
+    <header>
+      <h1>Conway's Game of Life</h1>
+    </header>
+
+    <main>
+        <div id="game-board"></div>
+      <div id="controls">
+        <div>
+          <button id="start-btn">Play</button>
+          <button id="reset-btn">Reset</button>
+          <select id="grid-size">
+            <option value="25">25x25</option>
+            <option value="50">50x50</option>
+            <option value="75">75x75</option>
+            <option value="100">100x100</option>
+          </select>
+        </div>
+  
+        <div>
+          <input type="text" id="generation-input" readonly value="0" disabled>
+        </div>
+  
+        <div>
+          <button id="advance-btn">></button>
+        </div>
+      </div>
+    </main>
+  
+    <aside>
+      <h2>What's it?</h2>
+      <p>The <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a> is a cellular automaton by the British mathematician John Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves</p>
+
+      <h2>How does it work?</h2>
+      <ul>
+        <li>Any live cell with fewer than two live neighbours dies, as if by underpopulation.</li>
+        <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+        <li>Any live cell with more than three live neighbours dies, as if by overpopulation.</li>
+        <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li>
+      </ul>
+
+
+      <h2>How to play?</h2>
+      <ul>
+        <li>Click on the tiles of the board to draw any pattern you want.</li>
+        <li>Click 'Play' and watch what happens.</li>
+        <li>Can you preddict what's gonna happen next?</li>
+      </ul>
+    </aside>
+
+    <footer>
+      <hr>
+      <a href="https://github.com/alande-amorim">Alande Amorim</a> | 
+      <a href="https://github.com/alande-amorim/game-of-life-js">GitHub</a>
+    </footer>
+
   </div>
 
 </body>
