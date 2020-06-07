@@ -1,5 +1,5 @@
 export let GRID_SIZE = document.getElementById('grid-size').value;
-
+export const TICK_DURATION = 0.5;
 export const gameBoard = document.getElementById('game-board');
 export const startBtn = document.querySelector('#start-btn');
 export const resetBtn = document.querySelector('#reset-btn');
