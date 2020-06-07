@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conway's Game of Life</title>
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    #game-board {
+      background-color: #999999;
+      width: 80vmin;
+      height: 80vmin;
+      display: grid;
+      grid-template-rows: repeat(50, 1fr);
+      grid-template-columns: repeat(50, 1fr);
+      grid-gap: 1px;
+      padding: 10px;
+    }
+
+    #controls { 
+      padding: 10px;
+      width: 80vmin;
+      display: flex;
+      background: #999999;
+    }
+
+    #game-board div {
+      background-color: #777;
+    }
+
+    #game-board div.live {
+      background-color: black;
+    }
+
+    #game-board div.pulse {
+      background-color: #34ff1e;
+    }
+
+  </style>
+  <script src="game.js" defer type="module"></script>
+</head>
+<body>
+
+  <div id="game-board"></div>
+  <div id="controls">
+    <button id="startBtn">Start</button>
+    <button id="resetBtn">Reset</button>
+    <input type="text" id="generationInput" readonly value="0" disabled>
+    <button id="advanceBtn">></button>
+  </div>
+
+</body>
+</html>
